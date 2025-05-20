@@ -147,4 +147,6 @@ class ImageSelector:
 if __name__ == "__main__":
     img = imread('../data/schraegbild_tempelhof.jpg')
     corners = ImageSelector(img).run()
-    print(f"b_n = np.array({corners.tolist()}, dtype=int)")
+
+    print("b_i = np.array([\n\t" + ",\n\t".join("[" + ", ".join(str(int(v)) for v in row) + "]" for row in corners) + "\n], dtype=int)")
+
